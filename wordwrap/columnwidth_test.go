@@ -11,5 +11,5 @@ func TestNewColumnWidth_ShouldNotInstanceColumnWidth_WhenValueIsEqualToZero(t *t
 	columnWidth, err := wordwrap.NewColumnWidth(0)
 
 	assert.Equal(t, wordwrap.NoColumnWidth, columnWidth)
-	assert.EqualError(t, wordwrap.NoneZeroValueErr, err.Error())
+	assert.EqualError(t, wordwrap.NoneZeroColumnWidthErr, err.Error())
 }

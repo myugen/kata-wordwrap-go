@@ -5,8 +5,8 @@ import (
 )
 
 var (
-	NoColumnWidth    = ColumnWidth{}
-	NoneZeroValueErr = errors.New("value cannot be zero")
+	NoColumnWidth          = ColumnWidth{}
+	NoneZeroColumnWidthErr = errors.New("value cannot be zero")
 )
 
 type ColumnWidth struct {
@@ -19,7 +19,7 @@ func (c ColumnWidth) Value() uint {
 
 func NewColumnWidth(value uint) (ColumnWidth, error) {
 	if value == 0 {
-		return NoColumnWidth, NoneZeroValueErr
+		return NoColumnWidth, NoneZeroColumnWidthErr
 	}
 	return ColumnWidth{value}, nil
 }
