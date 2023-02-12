@@ -4,7 +4,7 @@ const lineBreak = "\n"
 
 func Wrap(text string, columnWidth ColumnWidth) string {
 	width := columnWidth.Value()
-	if len(text) <= width {
+	if uint(len(text)) <= width {
 		return text
 	}
 	wrapped := text[0:width]

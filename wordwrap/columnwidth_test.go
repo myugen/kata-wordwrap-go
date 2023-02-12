@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestNewColumnWidth_ShouldNotInstanceColumnWidth_WhenValueIsLessOrEqualThanZero(t *testing.T) {
-	columnWidth, err := wordwrap.NewColumnWidth(-1)
+func TestNewColumnWidth_ShouldNotInstanceColumnWidth_WhenValueIsEqualToZero(t *testing.T) {
+	columnWidth, err := wordwrap.NewColumnWidth(0)
 
 	assert.Equal(t, wordwrap.NoColumnWidth, columnWidth)
-	assert.EqualError(t, wordwrap.InvalidValueErr(-1), err.Error())
+	assert.EqualError(t, wordwrap.NoneZeroValueErr, err.Error())
 }

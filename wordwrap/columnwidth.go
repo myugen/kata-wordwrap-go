@@ -2,25 +2,24 @@ package wordwrap
 
 import (
 	"errors"
-	"fmt"
 )
 
 var (
-	NoColumnWidth   = ColumnWidth{}
-	InvalidValueErr = func(value int) error { return errors.New(fmt.Sprintf("invalid value %d", value)) }
+	NoColumnWidth    = ColumnWidth{}
+	NoneZeroValueErr = errors.New("value cannot be zero")
 )
 
 type ColumnWidth struct {
-	value int
+	value uint
 }
 
-func (c ColumnWidth) Value() int {
+func (c ColumnWidth) Value() uint {
 	return c.value
 }
 
-func NewColumnWidth(value int) (ColumnWidth, error) {
-	if value <= 0 {
-		return NoColumnWidth, InvalidValueErr(value)
+func NewColumnWidth(value uint) (ColumnWidth, error) {
+	if value == 0 {
+		return NoColumnWidth, NoneZeroValueErr
 	}
 	return ColumnWidth{value}, nil
 }
