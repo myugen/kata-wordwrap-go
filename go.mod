@@ -1,4 +1,4 @@
-module github.com/AgileCraftsmanshipCanarias/kata-setup-go
+module github.com/myugen/kata-setup-go
 
 go 1.19
 

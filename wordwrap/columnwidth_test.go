@@ -3,7 +3,7 @@ package wordwrap_test
 import (
 	"testing"
 
-	"github.com/AgileCraftsmanshipCanarias/kata-setup-go/wordwrap"
+	"github.com/myugen/kata-setup-go/wordwrap"
 	"github.com/stretchr/testify/assert"
 )
 
